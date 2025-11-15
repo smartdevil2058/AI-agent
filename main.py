@@ -5,8 +5,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 load_dotenv()
-genai.configure(api_key=os.getenv("AIzaSyCmW4HrIOhnkVOpUdck5YcsPSzaDtB-Exs"))
-model = genai.GenerativeModel("gemini-1.5-flash")
+
+genai.configure(api_key="AIzaSyCmW4HrIOhnkVOpUdck5YcsPSzaDtB-Exs")
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 class KnowledgeAgent:
     def run(self, query):
@@ -45,7 +46,7 @@ class ReportAgent:
     def run(self, knowledge_output, debug_output):
         prompt = f"""
         You are the Report Agent.
-        Combine both outputs into a clean final answer.
+        Combine outputs into a clean final answer.
 
         Knowledge Output:
         {knowledge_output}
